@@ -1,4 +1,4 @@
-$: << File.expand_path(File.join(__FILE__, '..'))
+$: << File.expand_path(File.join(__FILE__, '..', 'parsers'))
 require 'base'
 require 'google_trend_parser'
 require 'fashion_press_parser'

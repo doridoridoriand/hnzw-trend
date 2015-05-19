@@ -6,7 +6,7 @@ module GoogleTrendParser
   headless.start
   driver = Selenium::WebDriver.for :chrome
 
-  driver.navigate.to 'http://www.google.co.jp/trends/hottrends'
+  driver.navigate.to Base::GOOGLE_TREND
 
   begin
     data = driver.find_elements(:xpath, Base::GOOGLE_TREND_KEYWORD).to_a

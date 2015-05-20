@@ -10,7 +10,7 @@ class AppRun < Sinatra::Base
 
   get '/' do
     @title = "HNZW TREND"
-    slim :index, :layout
+    slim :index, :layout => :layout_1col
   end
 
 end

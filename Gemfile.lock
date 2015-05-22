@@ -22,6 +22,7 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.0.7)
     ffi (1.9.8)
+    forgery (0.6.0)
     formatador (0.2.5)
     guard (2.12.5)
       formatador (>= 0.2.4)
@@ -145,6 +146,7 @@ PLATFORMS
 
 DEPENDENCIES
   cache_local
+  forgery
   guard (~> 2.0)
   guard-livereload
   guard-shotgun

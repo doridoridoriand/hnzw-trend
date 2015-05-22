@@ -29,4 +29,5 @@ group :development do
   gem "guard-shotgun"
   gem "rack-livereload"
   gem "guard-livereload", require: false
+  gem "forgery"
 end

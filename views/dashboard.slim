@@ -1,0 +1,15 @@
+.row-fluid
+  .span12
+    h1 Dashboard
+    table.table.table-bordered.table-striped
+      tr
+        th ID
+        th Name
+        th Email
+        th Join Date
+      -for e in @list
+        tr
+          td = e[:id]
+          td = e[:name]
+          td = e[email]
+          td = e[:join_date].to_s

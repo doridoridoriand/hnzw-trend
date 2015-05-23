@@ -20,5 +20,10 @@ module GoogleTrendParser
   driver.quit
   headless.destroy
 
-  DATA = data_text.compact
+  hash = Hash.new {|h, e| h[e] = {}}
+  data_text.each_with_index do |entry, i|
+    hash[i][:title] = entry[0]
+    hash[i][:text] = entry[1]
+  end
+  DATA = hash
 end

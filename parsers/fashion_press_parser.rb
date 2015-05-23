@@ -6,13 +6,13 @@ module FashionPressParser
   agent = Mechanize.new
   source = agent.get(Base::FASHION_PRESS)
 
-  data = {}
+  hash = Hash.new {|h, e| h[e] = {}}
 
   source_arr = source.search("div.news-box").to_a
-
-  source_arr.each do |entry|
-    data[entry.search("h3").text] = "#{Base::FASHION_PRESS_TOP}#{entry.search('a').attribute('href').value}"
+  source_arr.each_with_index do |entry, i|
+    item[i][:title] = entry.search("h3").text
+    item[i][:URL]   = "#{Base::FASHION_PRESS_TOP}#{entry.search('a').attribute('href').value}"
   end
 
-  DATA = data
+  DATA = hash
 end

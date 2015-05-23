@@ -3,15 +3,13 @@ require 'base'
 require 'forgery'
 
 module DebugPageParser
-  hash = {}
-  entry = {}
+
+  hash = Hash.new {|h, e| h[e] = {}}
 
   for i in 0..10 do
-    entry['title'] = Forgery('internet').email_address
-    entry['URL']   = Forgery('lorem_ipsum').sentence
-    hash[i.to_s]   = entry
+    hash[i][:title] = Forgery('internet').email_address
+    hash[i][:URL] = Forgery('lorem_ipsum').sentence
   end
 
-  p hash
-
+  DATA = hash
 end

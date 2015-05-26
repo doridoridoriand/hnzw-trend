@@ -34,7 +34,7 @@ $ bundle install --path .bundle/gems --jobs 4
 $ ruby data_processor.rb
 ```
 
-## sinatra run
+## GUI mode
 ```
-$ bundle exec guard -i => run
+$ bundle exec guard -i
 ```

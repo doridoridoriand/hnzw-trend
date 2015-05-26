@@ -1,22 +1,13 @@
 $: << File.expand_path(File.join(__FILE__, '..'))
 require 'base'
+require 'open-uri'
 
-#module GoogleTrendParser
-  headless = Headless.new
-  headless.start
-  driver = Selenium::WebDriver.for :chrome
+data = ''
+open("https://www.google.co.jp/trends/explore#cat=0-18-68&geo=JP&cmpt=q&tz=") {|filestream|
+  filestream.each_line {|line|
+    data << line.encode("UTF-8")
+  }
+}
 
-  driver.navigate.to 'https://www.google.co.jp/trends/explore#cat=0-18-68-993&geo=JP&cmpt=q&tz='
+puts data.split('trends.Category.setTreeData')[1].split('</script>')[0]
 
-  begin
-    #data = driver.find_elements(:xpath, "//td[@class='trends-bar-chart-name-cell trends-bar-chart-row']").to_a
-    data = driver.find_elements(:xpath, "//tr[@class='trends-table-innertitle-firstrow']")
-  rescue => error
-    retry
-  end
-
-  p data
-
-  driver.quit
-  headless.destroy
-#end

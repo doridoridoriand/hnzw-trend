@@ -10,8 +10,8 @@ module FashionPressParser
 
   source_arr = source.search("div.news-box").to_a
   source_arr.each_with_index do |entry, i|
-    item[i][:title] = entry.search("h3").text
-    item[i][:URL]   = "#{Base::FASHION_PRESS_TOP}#{entry.search('a').attribute('href').value}"
+    hash[i][:title] = entry.search("h3").text
+    hash[i][:URL]   = "#{Base::FASHION_PRESS_TOP}#{entry.search('a').attribute('href').value}"
   end
 
   DATA = hash

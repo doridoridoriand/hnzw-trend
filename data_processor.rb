@@ -3,19 +3,19 @@ require 'base'
 require 'google_trend_parser'
 require 'fashion_press_parser'
 
-module DataProcessor
-  {
-    title: Forgery(:name).full_name,
-    text: Forgery(:internet).email_addres
-  }
+#module DataProcessor
+#  {
+#    title: Forgery(:name).full_name,
+#    text: Forgery(:internet).email_addres
+#  }
+#end
+
+GoogleTrendParser::DATA.each do |entry|
+  entry.map {|entry| puts entry}
+  puts '------'
 end
 
-#GoogleTrendParser::DATA.each do |entry|
-#  puts entry
-#  puts '------'
-#end
-#
-#FashionPressParser::DATA.each do |entry|
-#  puts entry
-#  puts '------'
-#end
+FashionPressParser::DATA.each do |entry|
+  entry.map {|entry| puts entry}
+  puts '------'
+end

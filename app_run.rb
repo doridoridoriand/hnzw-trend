@@ -1,4 +1,5 @@
-
+$: << File.expand_path(File.join(__FILE__, '..'))
+require 'data_processor'
 class AppRun < Sinatra::Base
   register Sinatra::Twitter::Bootstrap::Assets
   configure :development do
@@ -17,6 +18,7 @@ class AppRun < Sinatra::Base
   get '/google' do
     @title = "Google Trend"
     @list = GoogleTrendParser::DATA
+    slim :google
   end
 
 end

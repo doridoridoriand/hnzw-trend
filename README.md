@@ -25,8 +25,16 @@ $ rm chromedriver_linux64.zip
 $ sudo apt-get install xvfb
 ```
 
-## ruby dependencies
+## ruby dependencies install
 ```
-$ bundle install --path .bundle/gems --jobs 4 => install
+$ bundle install --path .bundle/gems --jobs 4
+```
+## CUI mode
+```
+$ ruby data_processor.rb
+```
+
+## sinatra run
+```
 $ bundle exec guard -i => run
 ```

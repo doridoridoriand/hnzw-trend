@@ -1,3 +1,4 @@
+require 'open-uri'
 require 'selenium-webdriver'
 require 'headless'
 require 'mechanize'

@@ -10,9 +10,11 @@ require 'fashion_press_parser'
 #  }
 #end
 
-puts GoogleTrendParser::DATA
+json_data = JSON.parse(GoogleTrendParser::DATA.encode('UTF-8'))
+puts json_data["children"]
 
 #FashionPressParser::DATA.each do |entry|
-#  entry.map {|entry| puts entry}
+#:w
+#entry.map {|entry| puts entry}
 #  puts '------'
 #end

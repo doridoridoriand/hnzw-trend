@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'json'
 require 'selenium-webdriver'
 require 'headless'
 require 'mechanize'
